@@ -1,0 +1,5 @@
+# ignore all compiled executables
+*.exe
+
+#ignore VS Code editor files
+.vscode/
