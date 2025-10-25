@@ -2,6 +2,18 @@
 #include<chrono>
 #include<string>
 
+double accuracy(const std::string& paragraph , const std::string& user_input){
+    int correct = 0;
+    for(int i =0 ; i<user_input.length();i++){
+        if(user_input[i] == paragraph[i]){
+            correct++;
+        }
+    }
+    double accuracy = (static_cast<double>(correct) / user_input.length()) * 100.0;
+    return accuracy;
+}
+
+
 int main(){
     std ::string prompt = "Type the following sentence as fast as you can:\n"; //Prompts the user to type the given paragraph
     std::string paragraph = "On quiet mornings, the laptop’s fan hums like a metronome while the cursor blinks with patient resolve, daring the hands to keep a steady rhythm across the keys. Errors arrive as tiny stumbles, yet each corrected word becomes a reminder that speed follows accuracy, not the other way around. Breathe, relax the shoulders, and let the eyes stay one phrase ahead, trusting muscle memory to bridge the distance between thought and text. With practice, sentences begin to flow like a well-tuned algorithm, precise, efficient, and quietly satisfying.\n";
@@ -26,6 +38,8 @@ int main(){
 
     std::cout << "it took you " << seconds_taken << " seconds to type.\n";
     std::cout << "Your typing speed is " << wpm << " words per minute.\n";
+    std::cout<<"your accuracy is >>";
+    std::cout << accuracy(paragraph, user_input) << "%\n";
 
 
 
