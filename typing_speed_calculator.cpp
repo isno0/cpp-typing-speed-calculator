@@ -1,7 +1,7 @@
 #include<iostream>
 #include<chrono>
 #include<string>
-
+//Calculates the accuracy of the user's input compared to the original paragraph
 double accuracy(const std::string& paragraph , const std::string& user_input){
     int correct = 0;
     for(int i =0 ; i<user_input.length();i++){
@@ -9,7 +9,8 @@ double accuracy(const std::string& paragraph , const std::string& user_input){
             correct++;
         }
     }
-    double accuracy = (static_cast<double>(correct) / user_input.length()) * 100.0;
+    //Calculates accuracy as a percentage
+    double accuracy = (static_cast<double>(correct) / user_input.length()) * 100.0; 
     return accuracy;
 }
 
